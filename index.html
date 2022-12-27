@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<title>Encriptador</title>
+		<link rel="stylesheet" href="reset.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Chivo+Mono&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="Libreria/fontawesome/css/all.css">
+	</head>
+<!-- ---------------body---------------- -->
+	<body>
+		<header class="encabezado_page">
+			<h1 class="titulo">Encriptador</h1>
+		</header>
+
+		<!-- ---------------main---------------- -->
+		<main class="cuerpo_page">
+			<!-- ---------------caja form---------------- -->
+			<form>
+				<!-- ---------------section de cajas---------------- -->
+				<section class="cajas">
+					<div class="entrada">
+						<textarea class="texto_entrada" id="mensaje_entrada" required placeholder="Ingrese el texto aqui" ></textarea>
+					</div>
+					<div class="salida">
+						<textarea id="mensaje_salida" class="texto_salida" required placeholder="No se encontro ningun texto a encriptar" ></textarea>
+					</div>
+				</section>
+				<!-- ---------------section de cajas---------------- -->
+				<!-- ---------------div requisitos---------------- -->
+				<div class="requisitos">
+					<h1>Solo letras minúsculas, sin acento</h1>
+				</div>
+				<!-- ---------------div requisitos---------------- -->
+				<!-- ---------------section de botones---------------- -->
+				<section class="botones">
+					<div class="b_en_des">
+						<input class="boton" type="button" value="Encriptar" id="boton-encriptar">
+						<input class="boton" type="button" value="Desencriptar" id="boton-desencriptar">
+					</div>
+					<div class="b_copy">
+						<input onclick="copiar_texto()" class="boton" type="button" value="copiar" id="boton_copiar">
+					</div>
+				</section>
+				<!-- ---------------section de botones---------------- -->
+			</form>
+
+
+		</main>
+		<!-- ---------------main---------------- -->
+		<!-- ---------------footer---------------- -->
+		<footer class="pie_page">
+			<h1 class="info">Informacion</h1>
+			<ul class="contacto">
+				<li>
+					<h1 class="nombre"><i class="fa-solid fa-user"></i> Alejo Torres </h1>
+				</li>
+				<li>
+					<a class="linkedin" target="_blank" href="https://www.linkedin.com/in/alejo-torres-192b72138/"><i class="fa-brands fa-linkedin"></i> Linkedin</a>
+				</li>
+				<li>
+					<a class="github" target="_blank" href="https://github.com/ANT22"><i class="fa-brands fa-github"></i> GitHub</a>
+				</li>
+			</ul>
+		</footer>
+		<!-- ---------------footer---------------- -->
+	</body>
+	<!-- ---------------body---------------- -->
+
+
+	<!-- ---------------scrip---------------- -->
+	<script>
+		//-------------------- scrip_encriptar------------------------//
+		function encriptar (){
+		var texto = document.querySelector("#mensaje_entrada").value;
+		var textoCifrado = texto.replace(/e/gi, "enter").replace(/i/gi, "imes").replace(/a/gi, "ai").replace(/o/gi, "ober").replace(/u/gi, "ufat");
+		document.querySelector(".texto_salida").value = textoCifrado;
+		document.querySelector("#mensaje_entrada").value;
+		}
+		var boton1 = document.querySelector("#boton-encriptar"); boton1.onclick = encriptar;
+		//-------------------- scrip_encriptar------------------------//
+
+		//-------------------- scrip_desencriptar------------------------//
+		function desencriptar (){ var texto = document.querySelector("#mensaje_entrada").value; var textoCifrado = texto.replace(/enter/gi, "e").replace(/imes/gi, "i").replace(/ai/gi, "a").replace(/ober/gi, "o").replace(/ufat/gi, "u"); document.querySelector(".texto_salida").value = textoCifrado; document.querySelector("#mensaje_entrada").value;
+		}
+		var boton2 = document.querySelector("#boton-desencriptar"); boton2.onclick = desencriptar;
+		//-------------------- scrip_desencriptar------------------------//
+
+		//-------------------- scrip_copiar------------------------//
+		function copiar_texto() {
+			var content = document.getElementById('mensaje_salida');
+			content.select();
+			document.execCommand('copy');
+		}
+	//-------------------- scrip_copiar------------------------//
+
+	</script>
+	<!-- ---------------scrip---------------- -->
+</html>

@@ -2,33 +2,22 @@
 
 body{
 	background-image: url("imagenes/background.jpg");
-	background-size: 100%;
 	font-family: 'Chivo Mono', monospace;
 	align-items: center;
 }
-header{
-	padding: 25px;
-	margin: 20px 0 25px 0;
-}
+
 .encabezado_page{
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	text-align: center;
+	padding: 1rem;
 }
 .titulo{
-	vertical-align: middle;
-	display: inline-block;
 	color: #bbbbbb;
 	font-size: 50px;
 }
 /*------------------main------------------*/
-main{
-	padding: 10px 10px 10px 10px;
-	display: block;
-	margin: 20px 0 20px 0;
-}
-.cajas{
-	display: inline-flex;
-	margin: 10px 0 10px 30px;
-}
 textarea{
 	padding: 5px 20px;
 	resize: none;
@@ -45,42 +34,45 @@ textarea{
 textarea::placeholder{
 	color:  #bbbbbb;
 }
-.entrada{
-	margin: 0 40px 0 0;
+
+.cuerpo_page{
+	display: flex;
+	flex-direction: column;
 }
-.texto_entrada{
-	width: 835px;
-	height: 750px;
+
+
+.cajas{
+	display: flex;
+	justify-content: space-around;
+}
+
+
+.texto_entrada, .texto_salida{
+	box-sizing: content-box;
+	width: 40%;
+	height: 30rem;
 	display: flex;
 	flex-direction: row;
 	align-items: flex-start;
 }
-.salida{
-	display: inline-block;
-	margin: 0 0 0 40px;
-}
-.texto_salida{
-	display: flex;
-	flex-direction: row;
-	align-items: flex-start;
-	width: 835px;
-	height: 750px;
-}
+
+
 .requisitos{
 	display: flex;
 	flex-direction: row;
 	align-items: flex-start;
-	width: 370px;
-	height: 20px;
-	margin: 30px 30px 30px 30px;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
 	color: #bbbbbb;
 }
+.requisitos h1{
+	padding-left: 1rem;
+}
 .requisitos:before{
+	padding-left: 5rem;
 	content: '🛈';
 }
-.requisitos h1{
-	margin: 0 0 0 10px;
-}
+
 .boton {
 	appearance: none;
 	background-image: radial-gradient(100% 100% at 100% 0, #7f7f7f 0, #5d5d5d 100%);
@@ -105,6 +97,8 @@ textarea::placeholder{
 	white-space: nowrap;
 	will-change: box-shadow,transform;
 	font-size: 18px;
+	width: 12rem;
+	height: 5rem;
 }
 .boton:focus {
 	box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
@@ -119,30 +113,17 @@ textarea::placeholder{
 }
 
 .botones{
-	margin: 20px 30px 20px 30px;
-	display: inline-flex;
+	display: flex;
+	justify-content: space-around;
 }
-.b_en_des{
-	display: inline-flex;
-}
-.b_copy{
-	display: inline-flex;
-	margin: 0 0 0 400px;
+.box--boton--en_des{
+	gap: 0.5rem;
 }
 
-#boton-encriptar, #boton-desencriptar{
-	width: 390px;
-	height: 70px;
-}
-#boton-encriptar{
-	margin-right: 45px;
-}
-#boton_copiar{
-	width: 275px;
-	height: 70px;
-}
 /*------------------footer------------------*/
-footer{
+.pie_page{
+	display: flex;
+	flex-direction: column;
 	text-align: center;
 	background: rgba(0, 0, 0, 0.511);
 	padding: 40px;
@@ -150,6 +131,9 @@ footer{
 }
 .contacto{
 	list-style: none;
+	display: flex;
+	justify-content: center;
+	gap: 2rem;
 }
 .contacto h1{
 	padding: 5px;

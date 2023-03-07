@@ -16,30 +16,25 @@
 		</header>
 
 		<main class="cuerpo_page">
-			<form>
+			<section class="cajas">
+					<textarea class="texto_entrada" id="mensaje_entrada" required placeholder="Ingrese el texto aqui" ></textarea>
+					<textarea id="mensaje_salida" class="texto_salida" required placeholder="No se encontro ningun texto a encriptar" ></textarea>
 
-				<section class="cajas">
-						<textarea class="texto_entrada" id="mensaje_entrada" required placeholder="Ingrese el texto aqui" ></textarea>
-						<textarea id="mensaje_salida" class="texto_salida" required placeholder="No se encontro ningun texto a encriptar" ></textarea>
+			</section>
 
-				</section>
+			<div class="requisitos">
+				<h1>🛈 Solo letras minúsculas, sin acento</h1>
+			</div>
 
-				<div class="requisitos">
-					<h1>Solo letras minúsculas, sin acento</h1>
+			<section class="botones">
+				<div class="box--boton--en_des">
+					<input class="boton" type="button" value="Encriptar" id="boton-encriptar">
+					<input class="boton" type="button" value="Desencriptar" id="boton-desencriptar">
 				</div>
-
-				<section class="botones">
-					<div class="box--boton--en_des">
-						<input class="boton" type="button" value="Encriptar" id="boton-encriptar">
-						<input class="boton" type="button" value="Desencriptar" id="boton-desencriptar">
-					</div>
-					<div class="box--boton--copy">
-						<input onclick="copiar_texto()" class="boton" type="button" value="copiar" id="boton_copiar">
-					</div>
-				</section>
-			</form>
-
-
+				<div class="box--boton--copy">
+					<input onclick="copiar_texto()" class="boton" type="button" value="copiar" id="boton_copiar">
+				</div>
+			</section>
 		</main>
 
 		<footer class="pie_page">

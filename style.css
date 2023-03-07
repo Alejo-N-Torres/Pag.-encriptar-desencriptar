@@ -15,25 +15,10 @@ body{
 }
 .titulo{
 	color: #bbbbbb;
-	font-size: 50px;
+	font-size: 3.125rem;
 }
 /*------------------main------------------*/
-textarea{
-	padding: 5px 20px;
-	resize: none;
-	outline: none;
-	border-radius: 32px;
-	background-image: radial-gradient(100% 100% at 100% 0, #7f7f7f 0, #5d5d5d 100%);
-	border: 0;
-	font-weight: 400;
-	font-size: 32px;
-	line-height: 150%;
-	color:  white;
-	border: none;
-}
-textarea::placeholder{
-	color:  #bbbbbb;
-}
+
 
 .cuerpo_page{
 	display: flex;
@@ -54,7 +39,22 @@ textarea::placeholder{
 	display: flex;
 	flex-direction: row;
 	align-items: flex-start;
+	padding: 5px 20px;
+	resize: none;
+	outline: none;
+	border-radius: 32px;
+	background-image: radial-gradient(100% 100% at 100% 0, #7f7f7f 0, #5d5d5d 100%);
+	border: 0;
+	font-weight: 400;
+	font-size: 2rem;
+	line-height: 150%;
+	color:  white;
+	border: none;
 }
+.texto_entrada:hover, .texto_salida:hover{
+	color:  #bbbbbb;
+}
+
 
 
 .requisitos{
@@ -68,10 +68,7 @@ textarea::placeholder{
 .requisitos h1{
 	padding-left: 1rem;
 }
-.requisitos:before{
-	padding-left: 5rem;
-	content: '🛈';
-}
+
 
 .boton {
 	appearance: none;
@@ -153,68 +150,62 @@ textarea::placeholder{
 /*------------------responsive------------------*/
 
 
-@media screen and (max-width:425px){
-	body{
-		text-align: center;
-	}
-	header{
-		background: red;
-	}
+@media screen and (max-width:768px){
 	.titulo{
-		font-size: 40px;
-	}
-	main{
-		padding: 0 0 0 0;
-		background: blue;
+		font-size: 2rem;
 	}
 	.cajas{
-		margin: 10px 10px 10px 10px;
-		display: block;
-	}
-	.entrada, .salida{
-		margin: 0 0 0 0;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 1rem;
 	}
 	.texto_entrada, .texto_salida{
+		font-size: 1rem;
+		height: 10rem;
 		width: 80%;
-		height: 400px;
-		margin: 10px 10px 20px 20px;
 	}
-
 	.requisitos{
-		width: auto;
-		height: auto;
-		font-size: 20px;
-		margin: 0 0 0 15px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
+
 	.botones{
-		display: block;
+		flex-direction: column	;
+		justify-content: center;
+		align-items: center;
+		gap: 0.5rem;
+		
 	}
-	.b_en_des{
-		display: block;
+	.box--boton--en_des{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 0.5rem;
+		box-sizing: content-box;
+		width: 100%;
 	}
-	.b_copy{
-		display: block;
-		margin: 0 0 0 0;
+	.box--boton--copy{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		box-sizing: content-box;
+		width: 100%;
 	}
-	#boton_copiar, #boton-desencriptar, #boton-encriptar{
-		margin-left: 0;
-		margin-right: 0;
-		margin: 0 0 0 0;
-		width: 270px;
+	.boton{
+		box-sizing: content-box;
+		width: 60%;
+		height: 2rem;
 	}
-	.contacto li{
-		display: block;
-		margin-right: 20px;
+	.pie_page{
+		box-sizing: content-box;
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		padding: 0;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
 	}
-	.nombre, .linkedin, .github{
-		margin: 0 10px 0 0;
-	}
-	footer{
-		background: orange;
-	}
-
-
-
-
-
 }
